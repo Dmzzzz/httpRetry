@@ -9,7 +9,6 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 
 @Service
@@ -47,8 +46,6 @@ public class MyService2 {
                         .build();
 
         HttpResponse.BodyHandler<String> handler = HttpResponse.BodyHandlers.ofString();
-
-        AtomicInteger currentCounter = new AtomicInteger(1);
 
         CompletableFuture<HttpResponse<String>> response =
                 httpClient.sendAsync(httpRequest, handler)
@@ -89,6 +86,12 @@ public class MyService2 {
                 "",
                 count,
                 t.getMessage());
+
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         return count < retryCount;
     }
