@@ -1,0 +1,5 @@
+amur:
+  getUrl: "http://localhost:8080/all2"
+time:
+  retryEverySecond: 10
+  retryCount: 10

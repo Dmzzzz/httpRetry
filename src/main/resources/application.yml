@@ -1,0 +1,11 @@
+#dataSource
+spring:
+  config:
+    import: integration.yml
+  datasource:
+    password: 'admin'
+    username: 'admin'
+    url: 'jdbc:postgresql://localhost:5444/postgres?currentSchema=mysimpledemostarter'
+  jpa:
+    generate-ddl: true
+    show-sql: true
