@@ -1,0 +1,1 @@
+set JAVA_HOME=D:\Coding - IDE\jdk-11.0.12\bin
